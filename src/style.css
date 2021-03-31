@@ -1,0 +1,117 @@
+body {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+h1 {
+  color: #822659;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+ul {
+  list-style-type: none;
+}
+
+p {
+  color: #822659;
+  text-align: center;
+  font-family: monospace;
+}
+
+.search {
+  background-color: #0a043c;
+}
+
+.form-control {
+  display: inline;
+  width: 250px;
+}
+
+.search-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: #822659;
+  margin-left: 5px;
+  width: 100px;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+}
+
+.current-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: #a3ddcb;
+  margin-left: 28px;
+  width: 100px;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+}
+
+.currTemp,
+.currCity {
+  color: #0a043c;
+  border-color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.celsius:hover {
+  cursor: pointer;
+}
+
+.fahrenheit:hover {
+  cursor: pointer;
+}
+
+.figures {
+  color: #0a043c;
+  background-color: #ffe3de;
+  font-size: 22px;
+}
+
+.current-day {
+  color: #0a043c;
+  font-weight: 700;
+  font-size: 24px;
+  padding-top: 25px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.big-sun {
+  color: #0a043c;
+  position: relative;
+  top: 30px;
+  left: 10px;
+  font-size: 60px;
+  display: table;
+  margin: 0 auto;
+}
+
+.small-emoji {
+  font-size: 26px;
+}
+
+.preview {
+  font-size: 20px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.small {
+  color: #03506f;
+  border-color: #a3ddcb;
+  background-color: #a3ddcb;
+  margin-top: 10px;
+}
+.day,
+.temp {
+  font-size: 28px;
+}
+
+.date {
+  font-size: 24px;
+}
