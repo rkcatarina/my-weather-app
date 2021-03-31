@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheCodes</title>
+    <script
+      src="https://kit.fontawesome.com/57cd5b8ee8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <hr />
+      <div class="row">
+        <div class="col-8">
+          <div class="card search">
+            <div class="card-body">
+              <form>
+                <input
+                  type="text"
+                  placeholder="Type the city here"
+                  class="form-control"
+                /> 
+                <input type="submit" class="search-button" value="Search" />
+                
+
+                <button type="submit" class="current-button"/>Current</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <span class="currCity"> Cologne </span
+          >
+          <span class="currTemp">19°C</span></span>
+          <span class="celsius"</span>°C</span>
+          <span>|</span>
+          <span class="fahrenheit"</span>°F</span>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="card figures">
+            <div class="card-body">
+              <ul>
+                
+                <li ><strong>Wind</strong>: <span class="wind">40</span></li>
+                <li ><strong>Pressure</strong>: <span class="pressure">1010</span> hPa</li>
+                <li ><strong>Humidity</strong>: <span class="humidity">60</span> %</li>
+                <li ><strong>Sight</strong>: <span class="sight"> Clear</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <ul class="current-day">
+            <li class="weekDay">Sunday</li>
+            <li class="date">Feb 28</li>
+            <li class="time">22:30h</li>
+          </ul>
+        </div>
+        <div class="col-sm-2 emoji">
+          <i class="fas fa-cloud-sun big-sun"></i>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="row">
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Mon</strong>
+                </li>
+                <li class="date">1st Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Tue</strong>
+                </li>
+                <li class="date">2nd Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Wed</strong>
+                </li>
+                <li class="date">3rd Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Thu</strong>
+                </li>
+                <li class="date">4th Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Fri</strong>
+                </li>
+                <li class="date">5th Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2">
+          <div class="card small">
+            <div class="card-body">
+              <ul class="preview">
+                <li class="day">
+                  <strong>Sat</strong>
+                </li>
+                <li class="date">6th Mar</li>
+                <li>
+                  <i class="fas fa-cloud-sun small-emoji"></i>
+                </li>
+                <li class="temp">
+                  <strong>15°C</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <p>Coded by Catarina Redshaw Kranich</p>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
