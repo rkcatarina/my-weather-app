@@ -19,12 +19,14 @@ function showCurrentNumbers(response) {
   let pressure = document.querySelector(".pressure");
   let humidity = document.querySelector(".humidity");
   let sight = document.querySelector(".sight");
+  let icon = document.querySelector("#icon");
   celTemp = Math.round(response.data.main.temp);
   temperature.innerHTML = Math.round(response.data.main.temp);
   nameCity.innerHTML = response.data.name;
   wind.innerHTML = response.data.wind.speed + " km/h";
   humidity.innerHTML = response.data.main.humidity;
   sight.innerHTML = response.data.weather[0].main;
+  icon.setAttribute("src", "http://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png")
 }
 
 function showCelsius(event) {
