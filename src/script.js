@@ -26,7 +26,9 @@ function showCurrentNumbers(response) {
   wind.innerHTML = response.data.wind.speed + " km/h";
   humidity.innerHTML = response.data.main.humidity;
   sight.innerHTML = response.data.weather[0].main;
-  icon.setAttribute("src", "http://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png")
+  icon.setAttribute("src", "http://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png");
+  celsiusSign.classList.add("on");
+  fahrenheitSign.classList.remove("on");
 }
 
 function showCelsius(event) {
