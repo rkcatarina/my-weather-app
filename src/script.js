@@ -1,4 +1,4 @@
-function searchCityCelsius(event) {
+function searchCity(event) {
   event.preventDefault();
   let nameCity = document.querySelector(".currCity");
   let city = document.querySelector(".form-control");
@@ -9,45 +9,41 @@ function searchCityCelsius(event) {
   let url = apiUrl + "&q=" + city.value + "&appid=" + apiKey + "&units=metric";
   axios.get(url).then(showCurrentNumbers);
 }
-function searchCityFahrenheit(event) {
-  event.preventDefault();
-  let nameCity = document.querySelector(".currCity");
-  let city = document.querySelector(".form-control");
-  console.log(city.value);
-  nameCity.innerHTML = city.value;
-  let apiKey = "f935225af798852bda9bde94b0b68954";
-  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
-  let url =
-    apiUrl + "&q=" + city.value + "&appid=" + apiKey + "&units=imperial";
-  axios.get(url).then(showCurrentNumbersFahrenheit);
-  console.log(url);
-}
 
-function showCurrentNumbersFahrenheit(response) {
-  let nameCity = document.querySelector(".currCity");
-  let temperature = document.querySelector(".currTemp");
-  let wind = document.querySelector(".wind");
-  let pressure = document.querySelector(".pressure");
-  let humidity = document.querySelector(".humidity");
-  let sight = document.querySelector(".sight");
-  temperature.innerHTML = Math.round(response.data.main.temp) + "°F";
-  nameCity.innerHTML = response.data.name;
-  wind.innerHTML = response.data.wind.speed + " mph";
-  sight.innerHTML = response.data.weather[0].main;
-}
+
 
 function showCurrentNumbers(response) {
   let nameCity = document.querySelector(".currCity");
-  let temperature = document.querySelector(".currTemp");
+  let temperature = document.querySelector("#currTemp");
   let wind = document.querySelector(".wind");
   let pressure = document.querySelector(".pressure");
   let humidity = document.querySelector(".humidity");
   let sight = document.querySelector(".sight");
-  temperature.innerHTML = Math.round(response.data.main.temp) + "°C";
+  celTemp = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(response.data.main.temp);
   nameCity.innerHTML = response.data.name;
   wind.innerHTML = response.data.wind.speed + " km/h";
   humidity.innerHTML = response.data.main.humidity;
   sight.innerHTML = response.data.weather[0].main;
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusSign.classList.add("on");
+  fahrenheitSign.classList.remove("on");
+  let temperature = document.querySelector("#currTemp");
+  temperature.innerHTML = Math.round(celTemp);
+}
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  celsiusSign.classList.remove("on");
+  fahrenheitSign.classList.add("on");
+  let temperature = document.querySelector("#currTemp");
+  let fahrenheitTemp = (celTemp * 9) / 5 + 32;
+  console.log(fahrenheitTemp);
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+
 }
 
 function geoApi() {
@@ -109,6 +105,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+let celTemp = null;
+
 let dayDisplay = document.querySelector(".weekDay");
 dayDisplay.innerHTML = day;
 
@@ -122,10 +120,13 @@ let currentEngine = document.querySelector("button");
 currentEngine.addEventListener("click", geoApi);
 
 let searchEngine = document.querySelector("form");
-searchEngine.addEventListener("submit", searchCityCelsius);
+searchEngine.addEventListener("submit", searchCity);
 
-let celsiusTemp = document.querySelector(".celsius");
-let fahrenheitTemp = document.querySelector(".fahrenheit");
+let celsiusSign = document.querySelector("#celsiusSign");
+let fahrenheitSign = document.querySelector("#fahrenheitSign");
 
-celsiusTemp.addEventListener("click", searchCityCelsius);
-fahrenheitTemp.addEventListener("click", searchCityFahrenheit);
+celsiusSign.addEventListener("click", showCelsius);
+fahrenheitSign.addEventListener("click", showFahrenheit);
+
+let temperature = document.querySelector("#currTemp")
+console.log(temperature)

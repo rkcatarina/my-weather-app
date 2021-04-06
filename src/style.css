@@ -50,8 +50,15 @@ p {
   padding: 10px;
 }
 
-.currTemp,
+
 .currCity {
+  color: #0a043c;
+  border-color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+#currTemp {
   color: #0a043c;
   border-color: black;
   font-size: 32px;
@@ -115,3 +122,18 @@ p {
 .date {
   font-size: 24px;
 }
+
+.units {
+  position: relative;
+  top:-10px;
+}
+
+.on {
+  color:#03506f;
+  font-weight: bold;
+  cursor: pointer;
+  }
+
+.on:hover{
+  text-decoration: none;
+  }
