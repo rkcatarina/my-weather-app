@@ -40,10 +40,10 @@ function forecastDisplay(response) {
                   <li class="temp">
                     <span class="weather-max"><strong>${Math.round(
                       forecastDay.temp.max
-                    )}°C</strong></span>
+                    )}</strong></span>
                     <span class="weather-min"><strong>${Math.round(
                       forecastDay.temp.min
-                    )}°C</strong></span>
+                    )}</strong></span>
                   </li>
                 </ul>
             </div>
