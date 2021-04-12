@@ -72,10 +72,11 @@ function showCurrentNumbers(response) {
   let sight = document.querySelector(".sight");
   let icon = document.querySelector("#icon");
   celTemp = Math.round(response.data.main.temp);
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(response.data.main.temp) + "°C";
   nameCity.innerHTML = response.data.name;
+  pressure.innerHTML = response.data.main.pressure + " hPa";
   wind.innerHTML = response.data.wind.speed + " km/h";
-  humidity.innerHTML = response.data.main.humidity;
+  humidity.innerHTML = response.data.main.humidity +" %";
   sight.innerHTML = response.data.weather[0].main;
   icon.setAttribute(
     "src",
@@ -103,7 +104,7 @@ function showFahrenheit(event) {
   let temperature = document.querySelector("#currTemp");
   let fahrenheitTemp = (celTemp * 9) / 5 + 32;
   console.log(fahrenheitTemp);
-  temperature.innerHTML = Math.round(fahrenheitTemp);
+  temperature.innerHTML = Math.round(fahrenheitTemp) + "°F";
 }
 
 function geoApi() {

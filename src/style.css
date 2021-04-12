@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fff 100%);
 }
 
 h1 {
@@ -88,15 +88,7 @@ p {
   text-align: center;
 }
 
-.big-sun {
-  color: #0a043c;
-  position: relative;
-  top: 30px;
-  left: 10px;
-  font-size: 60px;
-  display: table;
-  margin: 0 auto;
-}
+
 
 
 .preview {
@@ -114,6 +106,10 @@ p {
 .day,
 .temp {
   font-size: 28px;
+}
+
+.day{
+  color: #0a043c;
 }
 
 .date {
@@ -134,3 +130,8 @@ p {
 .on:hover{
   text-decoration: none;
   }
+
+.weather-min{
+  opacity: 0.5;
+}
+
