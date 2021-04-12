@@ -9,8 +9,36 @@ function searchCity(event) {
   let url = apiUrl + "&q=" + city.value + "&appid=" + apiKey + "&units=metric";
   axios.get(url).then(showCurrentNumbers);
 }
-
-
+function forecastDisplay() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["T", "M"];
+  days.forEach(function (day) {
+    forecastHTML += `
+    <div class="col-xl-2">
+        <div class="card small">
+           <div class="card-body">
+                <ul class="preview">
+                  <li class="day">
+                    <strong>${day}</strong>
+                  </li>
+                  <li class="date">1st Mar</li>
+                  <li >
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png"
+           alt="Clear"
+           id="icon-small"
+           width="80">
+                  </li>
+                  <li class="temp">
+                    <strong>15°C</strong>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>`;
+    forecastElement.innerHTML = forecastHTML + `</div>`;
+  });
+}
 
 function showCurrentNumbers(response) {
   let nameCity = document.querySelector(".currCity");
@@ -26,7 +54,13 @@ function showCurrentNumbers(response) {
   wind.innerHTML = response.data.wind.speed + " km/h";
   humidity.innerHTML = response.data.main.humidity;
   sight.innerHTML = response.data.weather[0].main;
-  icon.setAttribute("src", "http://openweathermap.org/img/wn/" + response.data.weather[0].icon + "@2x.png");
+  icon.setAttribute(
+    "src",
+    "http://openweathermap.org/img/wn/" +
+      response.data.weather[0].icon +
+      "@2x.png"
+  );
+
   celsiusSign.classList.add("on");
   fahrenheitSign.classList.remove("on");
 }
@@ -47,7 +81,6 @@ function showFahrenheit(event) {
   let fahrenheitTemp = (celTemp * 9) / 5 + 32;
   console.log(fahrenheitTemp);
   temperature.innerHTML = Math.round(fahrenheitTemp);
-
 }
 
 function geoApi() {
@@ -132,5 +165,7 @@ let fahrenheitSign = document.querySelector("#fahrenheitSign");
 celsiusSign.addEventListener("click", showCelsius);
 fahrenheitSign.addEventListener("click", showFahrenheit);
 
-let temperature = document.querySelector("#currTemp")
-console.log(temperature)
+let temperature = document.querySelector("#currTemp");
+console.log(temperature);
+
+forecastDisplay();
